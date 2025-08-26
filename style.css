@@ -1,0 +1,160 @@
+/* Global styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff0f0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #ff6347;
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+/* Navigation (Flexbox) */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main layout (Grid: content + sidebar) */
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* content + sidebar */
+    gap: 2rem;
+    padding: 20px;
+}
+
+/* Welcome section */
+.welcome {
+    margin-bottom: 1.5rem;
+}
+
+/* Why Choose Us (Grid) */
+#why-choose-us ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+#why-choose-us li {
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Actions (Flexbox for buttons) */
+#actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+#actions button {
+    padding: 10px 20px;
+    background: #ff6347;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#actions button:hover {
+    background: #e5533d;
+}
+
+/* Sidebar */
+#sidebar {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#sidebar h2 {
+    margin-bottom: 1rem;
+    color: #ff6347;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    #actions {
+        flex-wrap: wrap;
+    }
+
+    #actions button {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        font-size: 18px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    main {
+        grid-template-columns: 1fr; /* stack sidebar under content */
+    }
+
+    #why-choose-us ul {
+        grid-template-columns: 1fr; /* stack features */
+    }
+
+    #actions button {
+        flex: 1 1 100%; /* full width buttons */
+    }
+
+    #sidebar {
+        margin-top: 1.5rem;
+    }
+}
